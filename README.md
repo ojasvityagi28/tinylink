@@ -9,7 +9,7 @@ TinyLink is a URL shortener that converts long URLs into short, memorable codes.
 * **Redis (Memurai)** — for in-memory caching of frequently accessed redirects and storing rate-limiting counters.
 * **Celery** — for processing analytics writes asynchronously in a background worker.
 * **JWT + bcrypt** — for stateless authentication and secure password hashing.
-* **Docker** — for containerized database environments and consistent setup. Native PostgreSQL was used during development due to WSL2 limitations.
+* **Docker** — docker-compose.yml starts a PostgreSQL container (docker compose up -d). Development used a native Postgres install.
 
 ## Architecture Decisions
 
@@ -79,7 +79,7 @@ Then edit `.env` with your local database credentials and secret key.
 
 ### 5. Start the required services
 
-Start PostgreSQL using either your native installation or Docker.
+Start PostgreSQL using either your native installation or Docker (`docker compose up -d`).
 
 Start Redis using Memurai on Windows.
 
